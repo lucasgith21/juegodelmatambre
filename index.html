@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Los Juegos del Hambre: Arena en Llamas | Juego Battle Royale Online Gratis</title>
+
+  <!-- SEO Meta Tags para Google -->
+  <meta name="description" content="Jugá gratis a Los Juegos del Hambre: Arena en Llamas en tu navegador. Sobreviví a la Cornucopia, empuñá el Arco Explosivo, colocá minas, lanzá granadas y sé el último tributo en pie." />
+  <meta name="keywords" content="juegos del hambre, hunger games juego online, battle royale 2d navegador, juego de arcos explosivos, juegos gratis navegador, survival arena" />
+  <meta name="author" content="Hunger Games Arena Project" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0c10" />
+
+  <!-- Open Graph / Redes Sociales / WhatsApp / Discord -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Los Juegos del Hambre: Arena en Llamas - Battle Royale Web" />
+  <meta property="og:description" content="Sobreviví a los 24 tributos en la Arena. Empuñá arcos explosivos, armas tácticas y trampas en este Battle Royale de acción rápida." />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Los Juegos del Hambre: Arena en Llamas" />
+  <meta name="twitter:description" content="¿Sobrevivirás a la Cornucopia? Arcos explosivos, granadas, armas y 24 tributos en la Arena." />
+
+  <!-- Datos Estructurados JSON-LD para Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Los Juegos del Hambre: Arena en Llamas",
+    "description": "Juego web Battle Royale inspirado en Los Juegos del Hambre con arcos explosivos, armas de fuego, trampas, cofres en la Cornucopia y 24 tributos.",
+    "genre": ["Battle Royale", "Action", "Survival"],
+    "playMode": "SinglePlayer",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web Browser",
+    "inLanguage": "es"
+  }
+  </script>
+
+  <!-- Favicon SVG embebido (Flecha en Llamas / Sinsajo) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230f1016' stroke='%23f59e0b' stroke-width='3'/%3E%3Cpath d='M16 48 L48 16 M48 16 L34 16 M48 16 L48 30' stroke='%23ff4d00' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='32' r='10' fill='none' stroke='%23fbbf24' stroke-width='2.5'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= PANTALLA DE INICIO (MENÚ PRINCIPAL) ================= -->
+  <div id="start-screen" class="overlay-screen active">
+    <div class="embers-bg" id="menu-embers"></div>
+    <div class="menu-container">
+      <div class="emblem-badge">
+        <span class="emblem-ring">🔥</span>
+        <span class="emblem-tag">EDICIÓN 75º VASALLAJE DE LOS VEINTICINCO</span>
+      </div>
+      <h1 class="game-title">LOS JUEGOS DEL HAMBRE<span>ARENA EN LLAMAS</span></h1>
+      <p class="game-subtitle">
+        24 Tributos en los pedestales. Una Cornucopia llena de armas, arcos explosivos y trampas. Solo uno saldrá con vida.
+      </p>
+
+      <div class="menu-grid">
+        <!-- Configuración del Tributo -->
+        <div class="menu-card">
+          <h2>🎯 Registro de Tributo</h2>
+          <div class="form-group">
+            <label for="player-name">Nombre del Tributo</label>
+            <input type="text" id="player-name" maxlength="16" placeholder="Ej: Katniss" value="Katniss" />
+          </div>
+
+          <div class="form-group">
+            <label for="player-district">Elegí tu Distrito (Ventaja Especial)</label>
+            <select id="player-district">
+              <option value="12" selected>Distrito 12 - Carbón (+20% Daño con Arcos y Explosivos)</option>
+              <option value="1">Distrito 1 - Lujo (+15% Daño general y empieza con Cuchillo)</option>
+              <option value="2">Distrito 2 - Armamento (+40 Escudo Táctico al iniciar)</option>
+              <option value="3">Distrito 3 - Tecnología (Empieza con 2 Minas de Proximidad)</option>
+              <option value="4">Distrito 4 - Pesca (No se frena en el río +10% Velocidad)</option>
+              <option value="5">Distrito 5 - Energía (+35% Estamina y regeneración rápida)</option>
+              <option value="7">Distrito 7 - Madera (Empieza con Machete y rompe cajas el doble de rápido)</option>
+              <option value="8">Distrito 8 - Textil (Empieza con Chaleco y Botiquín)</option>
+              <option value="10">Distrito 10 - Ganadería (+25 Vida Máxima inicial)</option>
+              <option value="11">Distrito 11 - Agricultura (Sigilo total en arbustos y +2 Bayas)</option>
+            </select>
+          </div>
+
+          <button id="btn-start" class="btn-primary">
+            ⚔️ ENTRAR A LA ARENA
+          </button>
+        </div>
+
+        <!-- Arsenal y Controles -->
+        <div class="menu-card info-card">
+          <h2>🏹 Arsenal de la Cornucopia</h2>
+          <ul class="arsenal-list">
+            <li><span class="rarity legendary">Legendario</span> <strong>Arco Explosivo:</strong> Mantené clic para tensar; dispara flechas ígneas que detonan al impactar.</li>
+            <li><span class="rarity epic">Épico</span> <strong>Arco de Caza y Ballesta:</strong> Alta precisión, daño crítico y flechas perforantes.</li>
+            <li><span class="rarity epic">Épico</span> <strong>Rifle del Capitolio y Escopeta:</strong> Fuego automático y ráfagas letales a corta distancia.</li>
+            <li><span class="rarity rare">Raro</span> <strong>Granadas, Minas y Molotovs:</strong> Trampas de proximidad, explosiones en cadena y fuego en área.</li>
+          </ul>
+
+          <div class="controls-box">
+            <h3>🎮 Controles</h3>
+            <div class="controls-grid">
+              <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Moverse</div>
+              <div><kbd>Clic Izq.</kbd> Tensar Arco / Disparar</div>
+              <div><kbd>Espacio</kbd> Rodar / Esquivar</div>
+              <div><kbd>Shift</kbd> Correr (Sprint)</div>
+              <div><kbd>E</kbd> Abrir Cofre / Agarrar</div>
+              <div><kbd>1</kbd>-<kbd>5</kbd> / Rueda: Cambiar Arma</div>
+              <div><kbd>G</kbd> o <kbd>Clic Der.</kbd> Lanzar Explosivo</div>
+              <div><kbd>R</kbd> Recargar Arma</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="menu-footer">
+        <span>Que la suerte esté siempre de vuestra parte.</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ================= INTERFAZ DE JUEGO (HUD) ================= -->
+  <div id="hud" class="hud hidden">
+    <!-- Panel Superior Izquierdo: Estado de la Arena -->
+    <div class="hud-top-left">
+      <div class="tribute-badge">
+        <div class="district-pill" id="hud-district">D12</div>
+        <div>
+          <div class="tribute-name" id="hud-name">Katniss</div>
+          <div class="tribute-sub" id="hud-perk">Bono Arcos +20%</div>
+        </div>
+      </div>
+
+      <div class="arena-stats">
+        <div class="stat-pill alive-pill" title="Tributos con vida">
+          <span class="stat-icon">🔥</span>
+          <div>
+            <small>VIVOS</small>
+            <strong id="hud-alive">24 / 24</strong>
+          </div>
+        </div>
+        <div class="stat-pill kills-pill" title="Tributos eliminados">
+          <span class="stat-icon">💀</span>
+          <div>
+            <small>BAJAS</small>
+            <strong id="hud-kills">0</strong>
+          </div>
+        </div>
+        <div class="stat-pill storm-pill" title="Anillo de Fuego">
+          <span class="stat-icon">⚠️</span>
+          <div>
+            <small id="hud-storm-label">ANILLO EN</small>
+            <strong id="hud-storm-timer">00:35</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centro Superior: Avisos de Cañonazos, Cuenta Regresiva y Paracaídas -->
+    <div class="hud-top-center">
+      <div id="countdown-banner" class="countdown-banner hidden">
+        <div class="countdown-subtitle">NO BAJES DEL PEDESTAL ANTES DEL GONG</div>
+        <div class="countdown-number" id="countdown-number">5</div>
+      </div>
+
+      <div id="cannon-banner" class="cannon-banner hidden">
+        <span class="cannon-icon">💥</span>
+        <div class="cannon-text">
+          <strong>CAÑONAZO EN LA ARENA</strong>
+          <span id="cannon-detail">El Tributo del Distrito 4 ha caído</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Superior Derecho: Minimapa y Kill Feed -->
+    <div class="hud-top-right">
+      <div class="minimap-wrapper">
+        <canvas id="minimap" width="175" height="175"></canvas>
+        <div class="minimap-footer">
+          <span>🟡 Cornucopia</span>
+          <span>🔴 Anillo de Fuego</span>
+        </div>
+      </div>
+      <div class="hud-utility-btns">
+        <button id="btn-sound" class="icon-btn" title="Activar/Silenciar Sonido">🔊 Audio</button>
+      </div>
+      <div id="kill-feed" class="kill-feed"></div>
+    </div>
+
+    <!-- Indicador de Interacción (Cofres / Loot cercano) -->
+    <div id="interact-prompt" class="interact-prompt hidden">
+      Presioná <kbd>E</kbd> para agarrar <span id="interact-item-name">Arco Explosivo</span>
+    </div>
+
+    <!-- Panel Inferior Central: Barras de Estado e Inventario -->
+    <div class="hud-bottom">
+      <!-- Barra de Tensión del Arco / Recarga -->
+      <div id="charge-bar-container" class="charge-bar-container hidden">
+        <span id="charge-label">TENSIÓN DEL ARCO</span>
+        <div class="charge-track">
+          <div id="charge-fill" class="charge-fill"></div>
+        </div>
+      </div>
+
+      <!-- Barras de Salud, Escudo y Estamina -->
+      <div class="vitals-container">
+        <div class="vital-row">
+          <span class="vital-label">🛡️</span>
+          <div class="vital-bar shield-bar">
+            <div id="bar-shield" class="vital-fill" style="width: 0%"></div>
+            <span id="text-shield" class="vital-text">0</span>
+          </div>
+        </div>
+        <div class="vital-row">
+          <span class="vital-label">❤️</span>
+          <div class="vital-bar hp-bar">
+            <div id="bar-hp" class="vital-fill" style="width: 100%"></div>
+            <span id="text-hp" class="vital-text">100 / 100</span>
+          </div>
+        </div>
+        <div class="vital-row stamina-row">
+          <span class="vital-label">⚡</span>
+          <div class="vital-bar stamina-bar">
+            <div id="bar-stamina" class="vital-fill" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventario de 5 Ranuras -->
+      <div id="inventory-bar" class="inventory-bar">
+        <div class="inv-slot active" data-slot="0"><span class="slot-key">1</span></div>
+        <div class="inv-slot" data-slot="1"><span class="slot-key">2</span></div>
+        <div class="inv-slot" data-slot="2"><span class="slot-key">3</span></div>
+        <div class="inv-slot" data-slot="3"><span class="slot-key">4</span></div>
+        <div class="inv-slot" data-slot="4"><span class="slot-key">5</span></div>
+      </div>
+
+      <div class="weapon-hint" id="weapon-hint">
+        Puños desnudos — Corré a los cofres de la Cornucopia o presioná <kbd>E</kbd> cerca de un arma
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PANTALLA DE FIN DE PARTIDA ================= -->
+  <div id="end-screen" class="overlay-screen">
+    <div class="end-modal">
+      <div id="end-badge" class="end-badge">PUESTO #1 / 24</div>
+      <h2 id="end-title" class="end-title">¡VENCEDOR DE LOS JUEGOS DEL HAMBRE!</h2>
+      <p id="end-subtitle" class="end-subtitle">El Capitolio corona al Tributo del Distrito 12.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Puesto Final</span>
+          <strong id="stat-rank">#1</strong>
+        </div>
+        <div class="stat-card">
+          <span>Tributos Eliminados</span>
+          <strong id="stat-kills">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Daño Infligido</span>
+          <strong id="stat-damage">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Tiempo Sobrevivido</span>
+          <strong id="stat-time">00:00</strong>
+        </div>
+      </div>
+
+      <div class="end-actions">
+        <button id="btn-restart" class="btn-primary">🔥 JUGAR DE NUEVO</button>
+        <button id="btn-menu" class="btn-secondary">🏠 CAMBIAR DISTRITO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas Principal del Juego -->
+  <canvas id="game-canvas"></canvas>
+
+  <script src="game.js"></script>
+</body>
+</html>
